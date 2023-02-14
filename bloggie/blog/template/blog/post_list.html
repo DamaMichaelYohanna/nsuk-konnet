@@ -1,0 +1,49 @@
+{% extends 'blog_base.html' %}{% load static %}{% block title %} NSUK-KONNET |
+Blog{% endblock %} {% block content %}
+<div class="container-fluid">
+  <p>hello world</p>
+  <div class="row ps-5 p3-5">
+    {% for post in post_list %}
+    <div class="col-md-4">
+      <div class="card-group">
+        <div class="card mb-4" style="border: 0px !important">
+          <img
+            class="card-img-top"
+            src="{% static 'bg1.jpg' %}"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <a
+              href="/blog/{{post.slug}}/"
+              style="text-decoration: none; color: rgb(56, 55, 55)"
+            >
+              <h2
+                class="card-title"
+                style="
+                  font-family: 'Arsenal', sans-seri;
+                  line-height: 2.7rem;
+                  font-size: 200%;
+                  text-decoration: none;
+                "
+              >
+                {{post.title}}
+              </h2>
+            </a>
+            <p
+              class="card-text"
+              style="line-height: 2rem; font-family: 'Arsenal', sans-seri"
+            >
+              {{post.content |truncatewords_html:15|safe}}
+            </p>
+            <p class="card-text">
+              <small class="text-muted">Post on {{post.created_on}}</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <hr />
+  </div>
+</div>
+{% endblock content%}
