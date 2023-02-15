@@ -3,7 +3,6 @@ from django.contrib.auth import get_user_model
 
 from froala_editor.fields import FroalaField
 
-
 STATUS = (
     (0, "Draft"),
     (1, "Publish")
@@ -15,6 +14,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
+    image = models.ImageField(null=True)
     updated_on = models.DateTimeField(auto_now=True)
     content = FroalaField()
     created_on = models.DateTimeField(auto_now_add=True)
@@ -28,11 +28,15 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments'),
-    name = models.CharField(max_length=20, blank=True, null=True)
-    email = models.EmailField(blank=True, null=True)
-    comment = models.TextField()
-    date = models.DateField(auto_created=True)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    name = models.CharField(max_length=80, null=True, blank=True)
+    email = models.EmailField(null=True, blank=True)
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    active = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['created_on']
 
     def __str__(self):
-        return f'{self.comment}'
+        return 'Comment {} by {}'.format(self.body, self.name)
