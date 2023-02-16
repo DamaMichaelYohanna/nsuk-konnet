@@ -6,7 +6,7 @@ Blog{% endblock %} {% block content %}
     <h2>{{post_detail.title}}</h2>
     <p class="pt-4">
       <img
-        src="{% static 'bg1.jpg' %}"
+        src="{{post_detail.image.url}}"
         alt="Photo image"
         width="90%"
         height="60%"
@@ -29,7 +29,7 @@ Blog{% endblock %} {% block content %}
           <div class="card mb-4" style="border: 0px !important">
             <img
               class="card-img-top"
-              src="{% static 'bg1.jpg' %}"
+              src="{{post.image.url}}"
               alt="Card image cap"
             />
             <div class="card-body">
@@ -60,8 +60,23 @@ Blog{% endblock %} {% block content %}
     </div>
   </div>
   <!-- end of more post -->
+  <hr />
   <!-- begining of comment section -->
   <div style="width: 70%" class="mb-5">
+    <!-- comment display -->
+    <div>
+      <h3>Comments({{post_detail.comments.all.count}})</h3>
+      <div style="background: #f6f6f6">
+        <hr />
+        {% for comment in post_detail.comments.all %}
+        <h5>
+          {% if comment.name %} {{comment.name}} {% else %} Anonymous {%endif%}
+        </h5>
+        <p>{{comment.body}}</p>
+        <hr />
+        {% endfor %}
+      </div>
+    </div>
     <div class="row mb-5">
       <div class="col-md-4" style="text-align: right"><hr /></div>
       <div class="col-md-3" style="text-align: center">
@@ -70,7 +85,7 @@ Blog{% endblock %} {% block content %}
       <div class="col-md-4" style="text-align: left"><hr /></div>
     </div>
     <div>
-      <form action="/blog/comment" method="POST">
+      <form action="" method="POST">
         <p class="pb-3">
           <input
             type="text"
@@ -80,7 +95,7 @@ Blog{% endblock %} {% block content %}
             placeholder="Name"
           />
           <input
-            type="text"
+            type="email"
             name="email"
             id="email"
             style="width: 45%; padding: 1%"
@@ -89,12 +104,13 @@ Blog{% endblock %} {% block content %}
         </p>
         <p>
           <textarea
-            name="comment"
-            id="comment"
+            name="body"
+            id="body"
             placeholder="Enter Your Comment"
             style="width: 91%; height: 200px; padding: 1%"
           ></textarea>
         </p>
+        {% csrf_token %}
         <button
           class="btn btn-primary"
           style="

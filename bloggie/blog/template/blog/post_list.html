@@ -9,7 +9,7 @@ Blog{% endblock %} {% block content %}
         <div class="card mb-4" style="border: 0px !important">
           <img
             class="card-img-top"
-            src="{% static 'bg1.jpg' %}"
+            src="{{post.image.url}}"
             alt="Card image cap"
           />
           <div class="card-body">
