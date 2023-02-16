@@ -57,7 +57,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'blog', 'template', 'blog'),
-                 os.path.join(BASE_DIR, 'main', 'static', 'main'),
+                 os.path.join(BASE_DIR, 'main', 'template', 'main'),
                  os.path.join(BASE_DIR, 'market', 'template', 'market')],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -116,9 +116,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'blog', 'static', 'blog'),
-                    os.path.join(BASE_DIR, 'blog', 'static', 'blog'),
-                    os.path.join(BASE_DIR, 'market', 'template', 'market')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'blog', 'static',),
+                    os.path.join(BASE_DIR, 'main', 'static'),
+                    os.path.join(BASE_DIR, 'market', 'static')]
 
 # Media files uploaded by user
 # Base url to serve media files
