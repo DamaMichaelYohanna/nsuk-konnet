@@ -185,7 +185,7 @@ Blog{% endblock %} {% block content %}
         </div>
       </div>
       <!-- end of stats -->
-      <div class="pt-5" style="position: relative">
+      <div class="pt-5 fade-in-up" style="position: relative">
         <h5>Worried about your studies? We got you.</h5>
         <h2 class="pt-3">
           We have a collection <span class="sec"> just for you.</span>
@@ -224,7 +224,9 @@ Blog{% endblock %} {% block content %}
           style="
             background: #f8f8f8;
             padding: 0px;
+            margin-top: 2%;
             margin-right: 2%;
+            padding-bottom: 3%;
             box-shadow: 0px 0px 25px rgb(182, 175, 175);
           "
         >
@@ -241,6 +243,53 @@ Blog{% endblock %} {% block content %}
       </div>
     </div>
     <!-- end for blog section in index -->
+    <!-- begining of ace section -->
+    <div class="pt-5 mt-5" style="background: #f7f7f7">
+      <h4>Ace Your exams at go</h4>
+      <h2>See the Secret to Exam success</h2>
+      <div class="row pt-4">
+        <div class="col-md-3">
+          <div style="background-color: red; padding: 0px">
+            <img
+              src="{% static 'main/fes1.jpg' %}"
+              alt="computer image"
+              width="80%"
+            />
+            <a href=""
+              ><h6>
+                Try out our CBT app with sample questions to have real world
+                feel of the computer base test exams
+              </h6></a
+            >
+            <h5></h5>
+          </div>
+        </div>
+        <div class="col-md-5 pt-3" style="background: white">
+          <img
+            src="{% static 'main/fes.jpg' %}"
+            alt="computer image"
+            width="100%"
+          />
+        </div>
+        <div class="col-md-3 pt-5" style="padding: 0px 3%">
+          <div style="background-color: #ffffff; padding: 0px">
+            <img
+              src="{% static 'main/fes2.jpg' %}"
+              alt="computer image"
+              width="100%"
+            />
+            <a href="" style="text-decoration: none"
+              ><h5
+                style="margin: 0px; text-align: left; padding: 3%"
+                class="pb-5"
+              >
+                Try out our CBT app with sample questions.
+              </h5></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock content %}
