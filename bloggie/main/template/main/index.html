@@ -308,6 +308,38 @@ Blog{% endblock %} {% block content %}
         </div>
       </div>
     </div>
+    <!-- end of cbt section -->
+    <!-- begining of new letter -->
+    <div
+      class="row"
+      style="padding: 0px 6%; background-color: #ffffff; text-align: left"
+    >
+      <div class="col-md-6 pt-5">
+        <h5>Subscribe to our Newsletter</h5>
+        <p>
+          Never be left out in all the happening within and outside your
+          environment by signing on our news letter as we provide you with edge
+          cutting update, freshly baked from authentic source directly into your
+          email for your comfortable consumption
+        </p>
+        <form action="/main/newsletter/subscribe" method="post">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            style="width: 80%; padding: 1%"
+          />
+          <button
+            style="padding: 1.4%; background: rgb(14, 180, 166); border: none"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <img src="{% static 'main/news.jpg' %}" alt="" />
+      </div>
+    </div>
   </div>
 </div>
 {% endblock content %}
