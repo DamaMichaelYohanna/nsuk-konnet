@@ -134,9 +134,9 @@ Blog{% endblock %} {% block content %}
       </div>
     </div>
     <!-- side bar section  -->
-    <div class="col-md-4" style="padding-top: 7%">
+    <div class="col-md-4 side-bar">
       <h3>Search</h3>
-      <form action="" method="GET">
+      <form action="" method="GET" class="side-bar-search">
         <div class="input-group">
           <input type="text" name="search" id="search" class="form-control" />
           <button class="input-group-text" style="color: rgb(14, 180, 166)">
@@ -144,6 +144,7 @@ Blog{% endblock %} {% block content %}
           </button>
         </div>
       </form>
+      <h3>Popular Post</h3>
     </div>
   </div>
 </div>
