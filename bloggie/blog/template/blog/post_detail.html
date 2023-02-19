@@ -1,127 +1,148 @@
 {% extends 'blog_base.html' %}{% load static %}{% block title %} NSUK-KONNET |
 Blog{% endblock %} {% block content %}
 <div class="container-fluid pt-5" style="padding-left: 6%">
-  <div>
-    <p>NSUK-KONNET UPDATE {{post_detail.created_on}}</p>
-    <h2>{{post_detail.title}}</h2>
-    <p class="pt-4">
-      <img
-        src="{{post_detail.image.url}}"
-        alt="Photo image"
-        width="90%"
-        height="60%"
-      />
-    </p>
-    <div style="width: 75%; padding-left: 2%; padding-top: 2%">
-      {{post_detail.content | safe}}
-    </div>
-  </div>
-  <!-- end of post detail -->
-  <!-- begining of more post -->
-  <div class="" style="width: 76%">
-    <h1 style="font-weight: bold" class="pt-5 pb-5">
-      <span style="color: rgb(134, 134, 148)">More post from</span> NSUK-KONNET
-    </h1>
-    <div class="row">
-      {% for post in more_post %}
-      <div class="col-md-5">
-        <div class="card-group">
-          <div class="card mb-4" style="border: 0px !important">
-            <img
-              class="card-img-top"
-              src="{{post.image.url}}"
-              alt="Card image cap"
-            />
-            <div class="card-body">
-              <a
-                href="/blog/{{post.slug}}/"
-                style="text-decoration: none; color: rgb(56, 55, 55)"
-              >
-                <h3
-                  class="card-title"
-                  style="
-                    font-family: 'Arsenal', sans-seri;
-                    line-height: 2.7rem;
-                    font-size: 150%;
-                    text-decoration: none;
-                  "
-                >
-                  {{post.title}}
-                </h3>
-              </a>
-              <p class="card-text">
-                <small class="text-muted">Post on {{post.created_on}}</small>
-              </p>
-            </div>
-          </div>
+  <div class="row">
+    <!-- main part of blog detail -->
+    <div class="col-md-8">
+      <div>
+        <p>NSUK-KONNET UPDATE {{post_detail.created_on}}</p>
+        <h2>{{post_detail.title}}</h2>
+        <p class="pt-4">
+          <img
+            src="{{post_detail.image.url}}"
+            alt="Photo image"
+            width="90%"
+            height="60%"
+          />
+        </p>
+        <div style="width: 75%; padding-left: 2%; padding-top: 2%">
+          {{post_detail.content | safe}}
         </div>
       </div>
-      {% endfor %}
-    </div>
-  </div>
-  <!-- end of more post -->
-  <hr />
-  <!-- begining of comment section -->
-  <div style="width: 70%" class="mb-5">
-    <!-- comment display -->
-    <div>
-      <h3>Comments({{post_detail.comments.all.count}})</h3>
-      <div style="background: #f6f6f6">
-        <hr />
-        {% for comment in post_detail.comments.all %}
-        <h5>
-          {% if comment.name %} {{comment.name}} {% else %} Anonymous {%endif%}
-        </h5>
-        <p>{{comment.body}}</p>
-        <hr />
-        {% endfor %}
+      <!-- end of post detail -->
+      <!-- begining of more post -->
+      <div class="" style="width: 76%">
+        <h1 style="font-weight: bold" class="pt-5 pb-5">
+          <span style="color: rgb(134, 134, 148)">More post from</span>
+          NSUK-KONNET
+        </h1>
+        <div class="row">
+          {% for post in more_post %}
+          <div class="col-md-5">
+            <div class="card-group">
+              <div class="card mb-4" style="border: 0px !important">
+                <img
+                  class="card-img-top"
+                  src="{{post.image.url}}"
+                  alt="Card image cap"
+                />
+                <div class="card-body">
+                  <a
+                    href="/blog/{{post.slug}}/"
+                    style="text-decoration: none; color: rgb(56, 55, 55)"
+                  >
+                    <h3
+                      class="card-title"
+                      style="
+                        font-family: 'Arsenal', sans-seri;
+                        line-height: 2.7rem;
+                        font-size: 150%;
+                        text-decoration: none;
+                      "
+                    >
+                      {{post.title}}
+                    </h3>
+                  </a>
+                  <p class="card-text">
+                    <small class="text-muted"
+                      >Post on {{post.created_on}}</small
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <!-- end of more post -->
+      <hr />
+      <!-- begining of comment section -->
+      <div style="width: 70%" class="mb-5">
+        <!-- comment display -->
+        <div>
+          <h3>Comments({{post_detail.comments.all.count}})</h3>
+          <div style="background: #f6f6f6">
+            <hr />
+            {% for comment in post_detail.comments.all %}
+            <h5>
+              {% if comment.name %} {{comment.name}} {% else %} Anonymous
+              {%endif%}
+            </h5>
+            <p>{{comment.body}}</p>
+            <hr />
+            {% endfor %}
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-md-4" style="text-align: right"><hr /></div>
+          <div class="col-md-3" style="text-align: center">
+            <h4>Write A Comment</h4>
+          </div>
+          <div class="col-md-4" style="text-align: left"><hr /></div>
+        </div>
+        <div>
+          <form action="" method="POST">
+            <p class="pb-3">
+              <input
+                type="text"
+                name="name"
+                id="name"
+                style="width: 45%; padding: 1%"
+                placeholder="Name"
+              />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                style="width: 45%; padding: 1%"
+                placeholder="Email"
+              />
+            </p>
+            <p>
+              <textarea
+                name="body"
+                id="body"
+                placeholder="Enter Your Comment"
+                style="width: 91%; height: 200px; padding: 1%"
+              ></textarea>
+            </p>
+            {% csrf_token %}
+            <button
+              class="btn btn-primary"
+              style="
+                color: white;
+                font-weight: bold;
+                padding: 8px 15px;
+                border-radius: 0px;
+              "
+            >
+              Post Comment
+            </button>
+          </form>
+        </div>
       </div>
     </div>
-    <div class="row mb-5">
-      <div class="col-md-4" style="text-align: right"><hr /></div>
-      <div class="col-md-3" style="text-align: center">
-        <h4>Write A Comment</h4>
-      </div>
-      <div class="col-md-4" style="text-align: left"><hr /></div>
-    </div>
-    <div>
-      <form action="" method="POST">
-        <p class="pb-3">
-          <input
-            type="text"
-            name="name"
-            id="name"
-            style="width: 45%; padding: 1%"
-            placeholder="Name"
-          />
-          <input
-            type="email"
-            name="email"
-            id="email"
-            style="width: 45%; padding: 1%"
-            placeholder="Email"
-          />
-        </p>
-        <p>
-          <textarea
-            name="body"
-            id="body"
-            placeholder="Enter Your Comment"
-            style="width: 91%; height: 200px; padding: 1%"
-          ></textarea>
-        </p>
-        {% csrf_token %}
-        <button
-          class="btn btn-primary"
-          style="
-            color: white;
-            font-weight: bold;
-            padding: 8px 15px;
-            border-radius: 0px;
-          "
-        >
-          Post Comment
-        </button>
+    <!-- side bar section  -->
+    <div class="col-md-4" style="padding-top: 7%">
+      <h3>Search</h3>
+      <form action="" method="GET">
+        <div class="input-group">
+          <input type="text" name="search" id="search" class="form-control" />
+          <button class="input-group-text" style="color: rgb(14, 180, 166)">
+            Search
+          </button>
+        </div>
       </form>
     </div>
   </div>
