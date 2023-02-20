@@ -3,7 +3,7 @@ Blog{% endblock %} {% block content %}
 <div class="container-fluid pt-5" style="padding-left: 6%">
   <div class="row">
     <!-- main part of blog detail -->
-    <div class="col-md-8">
+    <div class="col-md-8 main-blog-detail">
       <div>
         <p>NSUK-KONNET UPDATE {{post_detail.created_on}}</p>
         <h2>{{post_detail.title}}</h2>
@@ -11,24 +11,22 @@ Blog{% endblock %} {% block content %}
           <img
             src="{{post_detail.image.url}}"
             alt="Photo image"
-            width="90%"
+            width="95%"
             height="60%"
           />
         </p>
-        <div style="width: 75%; padding-left: 2%; padding-top: 2%">
-          {{post_detail.content | safe}}
-        </div>
+        <div class="blog-detail-content">{{post_detail.content | safe}}</div>
       </div>
       <!-- end of post detail -->
       <!-- begining of more post -->
-      <div class="" style="width: 76%">
-        <h1 style="font-weight: bold" class="pt-5 pb-5">
+      <div class="blog-detail-more">
+        <h1 class="pt-5 pb-5">
           <span style="color: rgb(134, 134, 148)">More post from</span>
           NSUK-KONNET
         </h1>
         <div class="row">
           {% for post in more_post %}
-          <div class="col-md-5">
+          <div class="col-md-6">
             <div class="card-group">
               <div class="card mb-4" style="border: 0px !important">
                 <img
@@ -145,6 +143,14 @@ Blog{% endblock %} {% block content %}
         </div>
       </form>
       <h3>Popular Post</h3>
+      {% for post in popular_post %}
+      <div class="sidebar-popular-post">
+        <a href="{% url 'blog:post_detail' post.slug %}"
+          ><h5>{{post.title|truncatewords:7 }}</h5></a
+        >
+        <hr />
+      </div>
+      {% endfor %}
     </div>
   </div>
 </div>
