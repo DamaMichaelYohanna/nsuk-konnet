@@ -29,7 +29,7 @@ class BlogView(CreateView):
     def get(self, request, *args, **kwargs):
         post = Post.objects.get(slug=kwargs['slug'])
         more_post = Post.objects.all()[:2]
-        context ={'post_detail': post, 'more_post': more_post}
+        context ={'post_detail': post, 'more_post': more_post, 'popular_post': more_post}
         return render(request, 'post_detail.html', context)
 
 
