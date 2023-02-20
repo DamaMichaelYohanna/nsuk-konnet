@@ -27,7 +27,7 @@ Blog{% endblock %} {% block content %}
         <div class="row">
           {% for post in more_post %}
           <div class="col-md-6">
-            <div class="card-group">
+            <div class="card-group more-post-card">
               <div class="card mb-4" style="border: 0px !important">
                 <img
                   class="card-img-top"
@@ -64,20 +64,24 @@ Blog{% endblock %} {% block content %}
         </div>
       </div>
       <!-- end of more post -->
-      <hr />
+      <!-- <hr /> -->
       <!-- begining of comment section -->
-      <div style="width: 70%" class="mb-5">
+      <div class="blog-detail-comment">
         <!-- comment display -->
         <div>
           <h3>Comments({{post_detail.comments.all.count}})</h3>
-          <div style="background: #f6f6f6">
+          <div>
             <hr />
             {% for comment in post_detail.comments.all %}
             <h5>
               {% if comment.name %} {{comment.name}} {% else %} Anonymous
               {%endif%}
             </h5>
-            <p>{{comment.body}}</p>
+            <p>
+              {{comment.body}} Thanks for always keeping your WordPress themes
+              up to date. Your level of support and dedication is second to none
+            </p>
+            <h5 class="comment-date">{{comment.created_on}}</h5>
             <hr />
             {% endfor %}
           </div>
