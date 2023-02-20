@@ -32,12 +32,32 @@
 
 /* BLOG POST PAGE CSS */
 /*  ------------------*/
+.blog-detail-content{
+    width: 95%; 
+    /* padding-left: 2%; */
+    padding-top: 2%
+}
+.blog-detail-more{
+    width: 95%
+}
+.blog-detail-more h1{
+    font-weight: bold;
+}
 .side-bar{
-    padding-top: 7%
+    margin-top: 7%;
+    padding-right: 4%;
+    background:rgb(255, 255, 255);
 }
 
 .side-bar h3{
     margin:6% 0px;
+}
+.sidebar-popular-post a{
+    text-decoration: none;
+    color:rgb(44, 46, 46)
+}
+.sidebar-popular-post a:hover{
+    color:  rgb(14, 180, 166);
 }
 .side-bar-search{
 
