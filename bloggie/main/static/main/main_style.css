@@ -77,6 +77,6 @@ hr{
 .sticky {
     position: -webkit-sticky; /* Safari */
     position: sticky;
-    top: 0;
+    top: 12%;
     background-color: white;
   }
