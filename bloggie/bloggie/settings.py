@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'main',
     'market',
     'froala_editor',
+    'taggit'
 ]
 
 MIDDLEWARE = [
