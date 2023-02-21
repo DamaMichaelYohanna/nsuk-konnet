@@ -74,6 +74,9 @@ hr{
 .sidebar-popular-post a:hover{
     color:  rgb(14, 180, 166);
 }
-.side-bar-search{
-
-}
+.sticky {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    background-color: white;
+  }
