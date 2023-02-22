@@ -1,11 +1,12 @@
 {% extends 'blog_base.html' %}{% load static %}{% block title %} NSUK-KONNET |
 Blog{% endblock %} {% block content %}
-<div class="container-fluid">
-  <p>hello world</p>
-  <div class="row ps-5 p3-5">
+<div class="container-fluid pt-5 post-list">
+  <div class="inner-nav-link"><a href="/">Home</a> / Blog</div>
+  <h3 style="text-align: center">NSUK-KONNET - Blogs</h3>
+  <div class="row inner-post-list">
     {% for post in post_list %}
     <div class="col-md-4">
-      <div class="card-group">
+      <div class="card-group post-card">
         <div class="card mb-4" style="border: 0px !important">
           <img
             class="card-img-top"
