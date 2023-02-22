@@ -162,8 +162,6 @@ Blog{% endblock %} {% block content %}
       {% endfor %}
       <div class="sticky">
         <h3 class="pt-5">Popular Tag</h3>
-        hello
-        <p>another one</p>
         {% for tag in post_detail.tag.all %}
         <a href="" class="btn" style="background-color: rgb(222, 225, 228)"
           >{{tag}}</a
