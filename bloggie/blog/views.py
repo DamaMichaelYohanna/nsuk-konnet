@@ -11,7 +11,7 @@ class BlogList(ListView):
     queryset = Post.objects.filter(status=1)
     template_name = 'post_list.html'
     context_object_name = 'post_list'
-    paginate_by = 15
+    paginate_by = 1
 
 
 class BlogView(CreateView):
