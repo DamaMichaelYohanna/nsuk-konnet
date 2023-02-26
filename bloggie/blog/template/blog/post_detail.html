@@ -143,9 +143,19 @@ Blog{% endblock %} {% block content %}
     <!-- side bar section  -->
     <div class="col-md-4 side-bar">
       <h3>Search</h3>
-      <form action="" method="GET" class="side-bar-search">
+      <form
+        action="{% url 'blog:search' %}"
+        method="GET"
+        class="side-bar-search"
+      >
         <div class="input-group">
-          <input type="text" name="search" id="search" class="form-control" />
+          <input
+            type="text"
+            name="search"
+            id="search"
+            class="form-control"
+            required
+          />
           <button class="input-group-text" style="color: rgb(14, 180, 166)">
             Search
           </button>

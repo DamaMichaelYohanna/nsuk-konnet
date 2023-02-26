@@ -64,3 +64,32 @@
     top: 12%;
     background-color: white;
   }
+
+  /* MAIN SEARCH PAGE CSS */
+  /* --------------------- */
+  .search-body{
+    background-color: #f6fafa;
+  }
+  .main-search{
+    margin-top: 8%;
+  }
+  .main-search input{
+    padding:2.6%;
+    width: 80%;
+    border: none;
+    background: white;
+    box-shadow: 0px 0px 3px rgb(221, 216, 216);
+    color:rgb(14, 180, 166);
+  }
+  .main-search input:hover{
+    background: rgb(248, 245, 245);
+    border-radius: none;
+  }
+  .main-search button{
+    background: rgb(14, 180, 166);
+    padding: 2.6%;
+    border: none;
+    color:white;
+    width: 17%;
+    font-weight: bold;
+  }
