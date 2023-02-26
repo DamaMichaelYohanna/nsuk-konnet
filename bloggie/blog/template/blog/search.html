@@ -2,7 +2,7 @@
 Blog{% endblock %} {% block content %}
 <div class="container-fluid pt-5 search-body">
   <div class="inner-nav-link"><a href="/">Home</a> / Search Results</div>
-  <div class="row">
+  <div class="row pb-5">
     <div class="col-md-4"></div>
     <div class="col-md-4">
       <form action="{% url 'blog:search' %}" method="GET" class="main-search">
@@ -13,7 +13,7 @@ Blog{% endblock %} {% block content %}
     <div class="col-md-4"></div>
   </div>
   <div class="row inner-post-list">
-    {% for post in post_list %}
+    {% for post in search_result %}
     <div class="col-md-4">
       <div class="card-group post-card">
         <div class="card mb-4" style="border: 0px !important">
