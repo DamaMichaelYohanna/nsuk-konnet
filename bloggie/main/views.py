@@ -9,3 +9,11 @@ def index(request):
     except IndexError:
         pass
     return render(request, 'index.html', {"posts": posts})
+
+
+def about_us(request):
+    return render(request, 'about.html',)
+
+
+def pass_questions(request):
+    return render(request, 'pass_questions.html')
