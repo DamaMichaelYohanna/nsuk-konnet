@@ -1,0 +1,33 @@
+/* global color scheme */
+hr{
+    opacity: 0.1;
+    margin:3% 0px;
+}
+.primary{
+    color:rgb(107, 17, 62);
+    color:rgb(19, 19, 105)
+}
+.sec{
+    color:rgb(84, 211, 200);
+    color: rgb(14, 180, 166);
+    font-weight: lighter;
+}
+
+/* index page */
+.get-rid{
+    padding-left: 20%;
+}
+
+/* description section */
+.desc{
+    color:rgb(107, 17, 62)
+}
+
+/* stats section | index */
+.stat-number h5{
+    color: rgb(19, 19, 105);
+}
+.stat-number h1{
+    font-weight: bold;
+    color:  rgb(14, 180, 166);
+}
