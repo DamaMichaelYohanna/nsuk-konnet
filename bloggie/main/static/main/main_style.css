@@ -31,3 +31,24 @@ hr{
     font-weight: bold;
     color:  rgb(14, 180, 166);
 }
+
+
+/* about page css */
+/* +++++++++++++++++++++++++++ */
+.about-header{
+    width: 100%; 
+    height: 20%; 
+    text-align: center
+}
+.about-header img{
+    width: 100%; height: 100%
+}
+.about-body{
+    padding: 3% 6%;
+}
+
+.faq-btn{
+    background: rgb(14, 180, 166);
+    color:black;
+    font-weight: bold;
+}
