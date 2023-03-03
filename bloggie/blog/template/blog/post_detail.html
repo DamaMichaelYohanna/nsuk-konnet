@@ -77,10 +77,7 @@ Blog{% endblock %} {% block content %}
               {% if comment.name %} {{comment.name}} {% else %} Anonymous
               {%endif%}
             </h5>
-            <p>
-              {{comment.body}} Thanks for always keeping your WordPress themes
-              up to date. Your level of support and dedication is second to none
-            </p>
+            <p>{{comment.body}}</p>
             <h5 class="comment-date">{{comment.created_on}}</h5>
             <hr />
             {% endfor %}
