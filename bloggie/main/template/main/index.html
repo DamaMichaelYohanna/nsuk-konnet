@@ -1,44 +1,44 @@
 {% extends 'blog_base.html' %}{% load static %}{% block title %} NSUK-KONNET |
 Blog{% endblock %} {% block content %}
-<div class="container-fluid" style="padding: 0px">
-  <div>
-    <img src="{% static 'main/bg.jpg' %}" alt="" style="width: 100%" />
+<div class="container-fluid index-main" style="padding: 0px">
+  <div class="index-bg">
+    <img src="{% static 'main/bg.jpg' %}" alt="Index background" />
   </div>
   <!-- end of home background -->
-  <div style="text-align: center" class="pt-5">
+  <div class="index-inner">
     <h4>Warm Welcome</h4>
     <h2 style="font-weight: bold" class="pb-5 primary">
       Welcome To
       <span class="sec">NSUK-KONNET</span>
       Your Complete Package
     </h2>
-    <div class="row ps-5 pe-5" style="background-color: white; width: 100%">
-      <div class="col-md-3">
-        <img src="{% static 'main/legit.png' %}" alt="legit.png" width="70px" />
+    <div class="row index-intro">
+      <div class="col-md-3 pt-3">
+        <img src="{% static 'main/legit.png' %}" alt="legit.png" />
         <h4 class="pt-2 primary">Legit Information</h4>
-        <p style="text-align: center; line-height: 1.8; font-weight: lighter">
+        <p style="line-height: 1.8; font-weight: lighter">
           Here in NSUK-KONNET, we provide you with the latest and most accurate
           information within and outside the compus.
         </p>
       </div>
-      <div class="col-md-3">
-        <img src="{% static 'main/mart.png' %}" alt="mart.png" width="70" />
+      <div class="col-md-3 pt-3">
+        <img src="{% static 'main/mart.png' %}" alt="mart.png" />
         <h4 class="pt-2 primary">Market Place</h4>
-        <p style="text-align: center">
+        <p>
           You have item in mind you wish to purchase at cheap price? Browse
           through our category of items an purchase from the best seller
         </p>
       </div>
-      <div class="col-md-3">
-        <img src="{% static 'main/guide.png' %}" alt="guide.png" width="70" />
+      <div class="col-md-3 pt-3">
+        <img src="{% static 'main/guide.png' %}" alt="guide.png" />
         <h4 class="pt-2 primary">Student guidance</h4>
-        <p style="text-align: center">
+        <p>
           Starting out as new student can be really challenging. Here in
           NSUK-KONNET we have a compilation of all you need to get started in
           the university
         </p>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3 pt-3">
         <img src="{% static 'tiv.png' %}" alt="tv.png" />
         <h4 class="primary">Legit Information</h4>
       </div>
