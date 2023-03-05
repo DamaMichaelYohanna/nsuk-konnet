@@ -45,31 +45,17 @@ Blog{% endblock %} {% block content %}
     </div>
     <!-- end of introduction heading. -->
     <div class="pt-5 pb-5 get-rid">
-      <div
-        style="
-          background: rgb(248, 246, 232);
-          padding-top: 6%;
-          text-align: left;
-          width: 90%;
-          max-height: 345px;
-        "
-        class="row"
-      >
-        <div class="col-md-3">
-          <img
-            src="{% static 'main/lady.jpg' %}"
-            alt="blog image"
-            width="300px"
-            style="position: relative; left: -60%"
-          />
+      <div class="row get-rid-inner">
+        <div class="col-md-3 get-rid-inner-left">
+          <img src="{% static 'main/lady.jpg' %}" alt="blog image" />
         </div>
-        <div class="col-md-7">
+        <div class="col-md-7 get-rid-inner-right">
           <h2 style="text-align: left">
             Get rid of
             <span class="sec">Old School Assumption.</span>
           </h2>
           <hr />
-          <h4 style="width: 80%; text-align: left; line-height: 1.7">
+          <h4>
             As we are bent on serving you better always, we provide you with
             seemless experience filled with quality content. Information is
             Available like never before with us
