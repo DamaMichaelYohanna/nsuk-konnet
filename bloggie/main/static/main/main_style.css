@@ -36,6 +36,8 @@ hr{
 }
 .get-rid{
     padding-left: 20%;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 .get-rid-inner{
     background: rgb(248, 246, 232);
@@ -53,6 +55,20 @@ hr{
     text-align: left;
     line-height: 1.7
 }
+.stats{
+    background-color: rgb(238, 238, 238);
+    margin: 7% 0px;
+    margin-bottom: 4%;
+    padding: 5%;}
+.inner-stats{
+    text-align: center
+}
+.inner-stats h4{
+    width: 50%; margin: auto
+}
+.stats-h{
+    display: none;
+}
 /* responsive for mobile */
 /* @media (max-width: 576px) { 
     .get-rid-inner-left img{
@@ -65,6 +81,7 @@ hr{
         width: 300px;
      }
     .get-rid-inner{
+        background: white;
         padding-top: 6%;
         text-align: center;
         width: 100%;
@@ -81,7 +98,14 @@ hr{
     .get-rid-inner-right h2{
         text-align: center;
         padding-top: 3%;
-    }
+ 
+   }
+   .inner-stats h4{
+    width: 100%;
+   }
+   .stats-h{
+    display: block;
+}
 }
 /* description section */
 .desc{
