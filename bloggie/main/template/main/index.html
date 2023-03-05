@@ -44,7 +44,8 @@ Blog{% endblock %} {% block content %}
       </div>
     </div>
     <!-- end of introduction heading. -->
-    <div class="pt-5 pb-5 get-rid">
+    <hr />
+    <div class="get-rid">
       <div class="row get-rid-inner">
         <div class="col-md-3 get-rid-inner-left">
           <img src="{% static 'main/lady.jpg' %}" alt="blog image" />
@@ -65,17 +66,10 @@ Blog{% endblock %} {% block content %}
     </div>
     <!-- end for get rid of  -->
     <!-- begining of statistic -->
-    <div
-      style="
-        background-color: rgb(238, 238, 238);
-        margin: 7% 0px;
-        margin-bottom: 4%;
-        padding: 5%;
-      "
-    >
-      <div style="text-align: center">
-        <h4>Grow Your Business And Make More</h4>
-        <h2 style="width: 50%; margin: auto">
+    <div class="stats">
+      <div class="inner-stats">
+        <h5>Grow Your Business And Make More</h5>
+        <h2>
           Not Convince About our
           <span class="sec">Market Place?</span>
           See stats for yourself.
@@ -88,10 +82,12 @@ Blog{% endblock %} {% block content %}
                 <h1>10,200</h1>
                 <h5>Total Number of User</h5>
               </div>
+              <hr class="stats-h" />
               <div class="col-md-4 stat-number">
                 <h1>10,200+</h1>
                 <h5>Goods In Stores</h5>
               </div>
+              <hr class="stats-h" />
               <div class="col-md-4 stat-number">
                 <h1>100%</h1>
                 <h5>Succuesful Sales</h5>
