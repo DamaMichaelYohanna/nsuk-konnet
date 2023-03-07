@@ -78,14 +78,23 @@ hr{
 }
 .test-in-stats-row-inner{
     padding-bottom: 5%;
-    background: white; margin: 0px 10px
+    background: white; margin: 10px 10px
+}
+.test-in-stats-row-inner p, .test-in-stats-row-inner-right p{
+    line-height: 1.7;
+    font-weight: 500;
+    text-align: left;
+    color: rgb(133, 124, 124);
+}
+.test-in-stats-row-inner-right{
+    padding-bottom: 5%;
+    margin-top:51%;
+    background: white; margin: 10px 6%}
+@media (max-width: 576px) { 
+    .test-in-stats-row-inner-right{
+        margin:10px;
 }
 /* responsive for mobile */
-/* @media (max-width: 576px) { 
-    .get-rid-inner-left img{
-        position:static;
-        width: 300px;
-} */
 @media (max-width: 868px) {
     .get-rid-inner-left img{
         position:static;
