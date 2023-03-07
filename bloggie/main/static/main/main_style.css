@@ -69,6 +69,17 @@ hr{
 .stats-h{
     display: none;
 }
+/* test in stats  */
+.test-in-stats{
+    padding: 5%;
+}
+.test-in-stats-row{
+    padding: 5% 0px;
+}
+.test-in-stats-row-inner{
+    padding-bottom: 5%;
+    background: white; margin: 0px 10px
+}
 /* responsive for mobile */
 /* @media (max-width: 576px) { 
     .get-rid-inner-left img{
