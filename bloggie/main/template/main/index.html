@@ -208,7 +208,7 @@ Blog{% endblock %} {% block content %}
     </div>
     <!-- end for blog section in index -->
     <!-- begining of ace section -->
-    <div class="" style="background: #f6fafa; padding: 6%; margin-top: 8%">
+    <div class="ace-main">
       <h4>Ace Your exams at go</h4>
       <h2>See the Secret to Exam success</h2>
       <div class="row pt-4">
@@ -232,13 +232,14 @@ Blog{% endblock %} {% block content %}
           </div>
         </div>
         <div
-          class="col-md-5"
-          style="box-shadow: 0px 0px 15px #f2f2f2; padding: 0px"
+          class="col-md-5 .d-none"
+          style="box-shadow: 0px 0px 15px #f2f2f2; padding: 0px; display: none"
         >
           <img
             src="{% static 'main/fes.jpg' %}"
             alt="computer image"
             width="100%"
+            class=".d-sm-none .d-md-block"
           />
         </div>
         <div class="col-md-3 pt-5" style="padding: 0px 2%; margin: 2%">
@@ -275,7 +276,7 @@ Blog{% endblock %} {% block content %}
     <!-- end of cbt section -->
     <!-- begining of new letter -->
     <div
-      class="row"
+      class="row ace-main"
       style="padding: 0px 6%; background-color: #ffffff; text-align: left"
     >
       <div class="col-md-6 pt-5">
