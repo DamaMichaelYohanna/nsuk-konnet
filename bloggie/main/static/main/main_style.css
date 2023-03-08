@@ -94,6 +94,12 @@ hr{
     .test-in-stats-row-inner-right{
         margin:10px;
 }
+/* .ace section in index */
+.ace-main{
+    background: #0ed3d3;
+     padding: 6%;
+    margin-top: 8%
+}
 /* responsive for mobile */
 @media (max-width: 868px) {
     .get-rid-inner-left img{
