@@ -275,11 +275,8 @@ Blog{% endblock %} {% block content %}
     </div>
     <!-- end of cbt section -->
     <!-- begining of new letter -->
-    <div
-      class="row"
-      style="padding: 0px 6%; background-color: #ffffff; text-align: left"
-    >
-      <div class="col-md-6 pt-5">
+    <div class="row letter">
+      <div class="col-md-6 letter-left">
         <h5>Subscribe to our Newsletter</h5>
         <p>
           Never be left out in all the happening within and outside your
@@ -302,7 +299,11 @@ Blog{% endblock %} {% block content %}
         </form>
       </div>
       <div class="col-md-6">
-        <img src="{% static 'main/news.jpg' %}" alt="" />
+        <img
+          src="{% static 'main/news.jpg' %}"
+          alt=""
+          class="d-none d-md-block"
+        />
       </div>
     </div>
   </div>
