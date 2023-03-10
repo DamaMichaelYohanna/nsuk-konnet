@@ -94,6 +94,7 @@ hr{
     .test-in-stats-row-inner-right{
         margin:10px;
 }
+}
 /* .ace section in index */
 .ace-main{
     background: #0ed3d3;
@@ -102,9 +103,12 @@ hr{
 }
 /* letter section */
 .letter{
-    padding: 0px 6%; 
+    padding: 3% 6%; 
     background-color: #ffffff; 
     text-align: left
+}
+.letter-left{
+    padding: 1%;
 }
 /* responsive for mobile */
 @media (max-width: 868px) {
