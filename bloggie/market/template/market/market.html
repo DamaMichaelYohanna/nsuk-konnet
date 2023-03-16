@@ -1,2 +1,14 @@
 {% extends 'blog_base.html' %}{% load static %}{% block title %} NSUK-KONNET |
-Blog{% endblock %} {% block content %} {% endblock content %}
+Blog{% endblock %} {% block content %}
+<div class="market">
+  <div class="about-header">
+    <div class="row">
+      <div class="col-md-8">
+        <img src="{% static 'market/shopping.jpg' %}" alt="about image" />
+      </div>
+    </div>
+    <h2 class="pt-4">Excellent Solution for your campus gist and shopping</h2>
+  </div>
+  <hr style="width: 60%; margin: 3% auto" />
+</div>
+{% endblock content %}
