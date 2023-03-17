@@ -1,13 +1,48 @@
 {% extends 'blog_base.html' %}{% load static %}{% block title %} NSUK-KONNET |
 Blog{% endblock %} {% block content %}
-<div class="market container-fluid" style="background: red; margin: 0px">
+<div class="market container-fluid" style="margin: 0px">
   <div class="about-header pt-4">
-    <div class="row">
-      <div class="col-md-8" style="background: blue">
-        <!-- <img src="{% static 'market/shopping.jpg' %}" alt="about image" /> -->
+    <div class="row market-main">
+      <div class="col-md-8 market-main-left">
+        <div>
+          <img src="{% static 'market/shopping.jpg' %}" alt="about image" />
+        </div>
+        <div>
+          <form action="" method="GET" class="pt-3">
+            <span class="input-group">
+              <input class="form-control" type="text" placeholder="search" />
+              <button class="input-group-text">Search</button>
+            </span>
+          </form>
+        </div>
+        <div class="row market-product">
+          <div class="col-md-4 col-sm-6 market-product-inner">
+            <div>
+              <div>
+                <img
+                  src="{% static 'market/shopping.jpg' %}"
+                  alt="product image"
+                />
+              </div>
+              <span style="width: 100%; padding: 2%; display: inline-block"
+                >Hand Bag
+                <a href="" class="btn btn-primary" style="margin: 3% 6%"
+                  >Place Order</a
+                ></span
+              >
+              <hr />
+              Price Tag: #3000
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <img src="{% static 'market/shopping.jpg' %}" alt="product image" />
+          </div>
+        </div>
       </div>
-      <div class="col-md-3" style="background: green">
+
+      <div class="col-md-4 market-main-right">
         <h4 class="pb-3">Features Stores</h4>
+        <hr />
         <div>
           <img src="{% static 'market/Featured.png' %}" height="20px" alt="" />
           <hr />
@@ -15,7 +50,6 @@ Blog{% endblock %} {% block content %}
         </div>
       </div>
     </div>
-    <h2 class="pt-4">Excellent Solution for your campus gist and shopping</h2>
   </div>
   <hr style="width: 60%; margin: 3% auto" />
 </div>
