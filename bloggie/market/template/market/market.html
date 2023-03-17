@@ -1,10 +1,18 @@
 {% extends 'blog_base.html' %}{% load static %}{% block title %} NSUK-KONNET |
 Blog{% endblock %} {% block content %}
-<div class="market">
-  <div class="about-header">
+<div class="market container-fluid" style="background: red; margin: 0px">
+  <div class="about-header pt-4">
     <div class="row">
-      <div class="col-md-8">
-        <img src="{% static 'market/shopping.jpg' %}" alt="about image" />
+      <div class="col-md-8" style="background: blue">
+        <!-- <img src="{% static 'market/shopping.jpg' %}" alt="about image" /> -->
+      </div>
+      <div class="col-md-3" style="background: green">
+        <h4 class="pb-3">Features Stores</h4>
+        <div>
+          <img src="{% static 'market/Featured.png' %}" height="20px" alt="" />
+          <hr />
+          <a href="">Vist Store</a>
+        </div>
       </div>
     </div>
     <h2 class="pt-4">Excellent Solution for your campus gist and shopping</h2>
