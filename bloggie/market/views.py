@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from .models import Product
 
 
 def market(request):
-    context = {}
+    products = Product.objects.all()
+    context = {"products": products}
     return render(request, 'market.html', context)
 
 
