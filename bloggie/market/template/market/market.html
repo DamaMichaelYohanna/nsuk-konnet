@@ -16,6 +16,7 @@ Blog{% endblock %} {% block content %}
           </form>
         </div>
         <div class="row market-product">
+          {% for product in products %}
           <div class="col-md-4 col-sm-6 market-product-inner">
             <div>
               <div>
@@ -25,18 +26,16 @@ Blog{% endblock %} {% block content %}
                 />
               </div>
               <span style="width: 100%; padding: 2%; display: inline-block"
-                >Hand Bag
+                >{{product.name}}
                 <a href="" class="btn btn-primary" style="margin: 3% 6%"
                   >Place Order</a
                 ></span
               >
               <hr />
-              Price Tag: #3000
+              Price Tag: #{{product.price}}
             </div>
           </div>
-          <div class="col-md-4 col-sm-6">
-            <img src="{% static 'market/shopping.jpg' %}" alt="product image" />
-          </div>
+          {% endfor %}
         </div>
       </div>
 
