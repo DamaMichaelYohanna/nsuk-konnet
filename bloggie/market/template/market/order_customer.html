@@ -1,0 +1,8 @@
+{% extends 'blog_base.html' %}{% load static %}{% block title %} NSUK-KONNET |
+Blog{% endblock %} {% block content %}
+<div class="container-fluid">
+  {% for product in order %}
+  <p>{{product}}</p>
+  {% endfor %}
+</div>
+{% endblock %}
