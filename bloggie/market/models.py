@@ -27,8 +27,29 @@ class Store(models.Model):
     rating = models.IntegerField()
     date = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.name
+
 
 class Catalog(models.Model):
     """catalogue for none store owner to publish their goods"""
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     goods = models.ManyToManyField(Product)
+
+
+class Order(models.Model):
+    """model for single order. with customer and goods added."""
+    customer = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
+
+    def __str__(self):
+        return f'{self.customer} ordered for {self.product}'
+
+
+class StoreOrder(models.Model):
+    """model for order to a particular store"""
+    store = models.ForeignKey(Store, on_delete=models.CASCADE)
+    order = models.ManyToManyField(Order)
+
+    def __str__(self):
+        return f'{self.store}'
