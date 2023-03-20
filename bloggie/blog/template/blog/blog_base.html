@@ -17,10 +17,16 @@
       crossorigin="anonymous"
     />
     <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
       integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
       crossorigin="anonymous"
     ></script>
+
     <!-- added google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -117,7 +123,8 @@
                   alt="Bootstrap"
                   width="30"
                   height="24"
-              /></a>
+                />hello</a
+              >
               <ul class="dropdown-menu" aria-labelledby="dropdown09">
                 <li>
                   <a class="dropdown-item" href="/account/profile">Profile</a>
@@ -146,6 +153,11 @@
         </div>
       </nav>
     </section>
+    {% for message in messages %}
+    <script>
+      window.alert("{{message}}");
+    </script>
+    {% endfor %}
 
     <!-- Body Section goes here -->
     <section style="width: 100%" class="pt-5">
