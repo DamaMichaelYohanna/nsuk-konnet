@@ -9,7 +9,7 @@ Orders{% endblock %} {% block content %}
         <tr>
           <th>S/N</th>
           <th>Product Name</th>
-          <th>Seller</th>
+          <th class="d-none d-md-block">Seller</th>
           <th>Status</th>
           <th>More</th>
         </tr>
@@ -18,9 +18,9 @@ Orders{% endblock %} {% block content %}
           <td>{{forloop.counter}}</td>
           <td>{{product.product.name}}</td>
           {% if product.product.owner.store %}
-          <td>{{product.product.owner.store}}</td>
+          <td class="d-none d-md-block">{{product.product.owner.store}}</td>
           {% else %}
-          <td>{{product.product.owner}}</td>
+          <td class="d-none d-md-block">{{product.product.owner}}</td>
           {% endif %}
           <td>{{product.status}}</td>
           <td>view More</td>
