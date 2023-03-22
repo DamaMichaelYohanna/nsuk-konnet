@@ -13,10 +13,9 @@ def market(request):
 def place_order(request, pk):
     """view for placing orders"""
     product = Product.objects.get(pk=pk)
-    # order = Order.objects.create(product=product, customer=request.user)
-    # store_ord, _ = StoreOrder.objects.get_or_create(store=product.owner.store)
-    # print(store_ord.order)
-    # store_ord.order.add(order)
+    order = Order.objects.create(product=product, customer=request.user)
+    store_ord, _ = StoreOrder.objects.get_or_create(store=product.owner.store)
+    store_ord.order.add(order)
     messages.success(request, "Order has been placed successfully")
     return redirect("/market")
 
