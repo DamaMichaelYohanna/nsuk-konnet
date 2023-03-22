@@ -1,8 +1,33 @@
 {% extends 'blog_base.html' %}{% load static %}{% block title %} NSUK-KONNET |
-Blog{% endblock %} {% block content %}
-<div class="container-fluid">
-  {% for product in order %}
-  <p>{{product}}</p>
-  {% endfor %}
+Orders{% endblock %} {% block content %}
+<div class="container-fluid customer-order" style="">
+  <h4>Orders</h4>
+  <hr />
+  <div>
+    <table class="table order-table">
+      <thead>
+        <tr>
+          <th>S/N</th>
+          <th>Product Name</th>
+          <th>Seller</th>
+          <th>Status</th>
+          <th>More</th>
+        </tr>
+        {% for product in order %}
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td>{{product.product.name}}</td>
+          {% if product.product.owner.store %}
+          <td>{{product.product.owner.store}}</td>
+          {% else %}
+          <td>{{product.product.owner}}</td>
+          {% endif %}
+          <td>{{product.status}}</td>
+          <td>view More</td>
+        </tr>
+        {% endfor %}
+      </thead>
+    </table>
+  </div>
 </div>
 {% endblock %}
