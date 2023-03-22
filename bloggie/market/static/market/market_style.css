@@ -23,3 +23,12 @@
     /* background: rgb(86, 161, 86); */
     box-shadow: 0px 0px 15px grey;
 }
+
+/* customer's order page */
+
+.customer-order{
+    padding: 5%
+}
+.order-table th{
+    color:rgb(14, 180, 166);
+}
