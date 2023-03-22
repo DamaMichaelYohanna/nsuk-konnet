@@ -41,6 +41,11 @@ class Order(models.Model):
     """model for single order. with customer and goods added."""
     customer = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
+    status = models.CharField(max_length=12,
+                              choices=(("pending", "pending"),
+                                       ("processing", "processing"),
+                                       ("Done", "Done")),
+                              default="pending")
 
     def __str__(self):
         return f'{self.customer} ordered for {self.product}'
