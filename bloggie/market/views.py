@@ -26,13 +26,21 @@ def view_order_by_customer(request):
     return render(request, 'order_customer.html', {"order": order})
 
 
+@login_required
 def add_product(request):
-    pass
+    if request.method == "POST":
+        product = Product.objects.create()
+    else:
+        pass
+    context = {}
+    return render(request, "add_product.html", context)
 
 
+@login_required
 def edit_product(request):
     pass
 
 
+@login_required
 def delete_product(reqeust):
     pass
