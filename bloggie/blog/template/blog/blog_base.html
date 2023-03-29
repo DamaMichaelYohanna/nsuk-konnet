@@ -110,6 +110,7 @@
               </li>
             </ul>
             <!-- profile picture in nav -->
+            {% if request.user.is_authenticated %}
             <span class="nav-item dropdown" style="padding: 0px 5%">
               <a
                 class="nav-link dropdown-toggle"
@@ -140,6 +141,17 @@
                 </li>
               </ul>
             </span>
+            {% else %}
+            <span
+              ><a href="http://" class="btn btn-dark">Login</a>
+              <a
+                href=""
+                class="btn"
+                style="background: rgb(14, 180, 166); color: white"
+                >Sign Up</a
+              ></span
+            >
+            {% endif %}
             <!-- <form>
               <input
                 class="form-control"
