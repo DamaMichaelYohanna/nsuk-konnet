@@ -1,5 +1,5 @@
 from django.contrib.auth import login, logout, authenticate
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from blog.models import Post
 
 
@@ -19,6 +19,11 @@ def login_view(request):
     return render(request, "main/login.html")
 
 
+def logout_view(request):
+    logout(request)
+    return redirect(reverse("main:home"))
+
+
 def index(request):
     posts = Post.objects.all()
     try:
@@ -34,3 +39,4 @@ def about_us(request):
 
 def pass_questions(request):
     return render(request, 'pass_questions.html')
+
