@@ -8,7 +8,7 @@ def login_view(request):
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
-        user = authenticate(username, password)
+        user = authenticate(username=username, password=password)
         if user and user.is_active:
             login(request, user)
             if user.store:
@@ -16,7 +16,7 @@ def login_view(request):
             elif user.catalog:
                 return redirect("/market/catalog")
 
-    return render(request, "main/login.html")
+    return render(request, "login.html")
 
 
 def logout_view(request):
