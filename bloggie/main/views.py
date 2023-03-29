@@ -1,5 +1,27 @@
-from django.shortcuts import render
+from django.contrib.auth import login, logout, authenticate
+from django.shortcuts import render, redirect, reverse
 from blog.models import Post
+
+
+def login_view(request):
+    """custom login for user"""
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        user = authenticate(username=username, password=password)
+        if user and user.is_active:
+            login(request, user)
+            if user.store:
+                return redirect("/market/store")
+            elif user.catalog:
+                return redirect("/market/catalog")
+
+    return render(request, "login.html")
+
+
+def logout_view(request):
+    logout(request)
+    return redirect(reverse("main:home"))
 
 
 def index(request):
@@ -12,8 +34,9 @@ def index(request):
 
 
 def about_us(request):
-    return render(request, 'about.html',)
+    return render(request, 'about.html', )
 
 
 def pass_questions(request):
     return render(request, 'pass_questions.html')
+

@@ -110,6 +110,7 @@
               </li>
             </ul>
             <!-- profile picture in nav -->
+            {% if request.user.is_authenticated %}
             <span class="nav-item dropdown" style="padding: 0px 5%">
               <a
                 class="nav-link dropdown-toggle"
@@ -123,8 +124,7 @@
                   alt="Bootstrap"
                   width="30"
                   height="24"
-                />hello</a
-              >
+              /></a>
               <ul class="dropdown-menu" aria-labelledby="dropdown09">
                 <li>
                   <a class="dropdown-item" href="/account/profile">Profile</a>
@@ -135,12 +135,21 @@
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="/account/logout"
-                    >Logout Session</a
-                  >
+                  <a class="dropdown-item" href="/logout">Logout Session</a>
                 </li>
               </ul>
             </span>
+            {% else %}
+            <span
+              ><a href="/login" class="btn btn-dark">Login</a>
+              <a
+                href="/signup"
+                class="btn"
+                style="background: rgb(14, 180, 166); color: white"
+                >Sign Up</a
+              ></span
+            >
+            {% endif %}
             <!-- <form>
               <input
                 class="form-control"

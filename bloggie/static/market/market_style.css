@@ -1,0 +1,34 @@
+.market{
+    /*  */
+}
+.market-main-right{
+    padding: 2%;
+    background-color: rgb(247, 239, 239);
+}
+
+.market-product{
+    margin: 2%;
+    background-color: rgb(255, 255, 255);
+    padding:0px;
+}
+.market-product-inner{
+    padding: 0%;
+    padding-bottom: 3%;
+}
+.market-product-inner img{
+    height: 100%;
+    width: 100%;
+}
+.market-product-inner:hover{
+    /* background: rgb(86, 161, 86); */
+    box-shadow: 0px 0px 15px grey;
+}
+
+/* customer's order page */
+
+.customer-order{
+    padding: 5%
+}
+.order-table th{
+    color:rgb(14, 180, 166);
+}
