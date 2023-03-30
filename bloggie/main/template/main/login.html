@@ -11,15 +11,20 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="{% static 'main/main_style.css' %}" />
+
     <title>NSUK-KONNET - Login</title>
   </head>
-  <body style="background: #f9f9f9">
-    <div class="container-fluid" style="padding-top: 6%">
-      <div class="row" style="margin: auto; width: 60%">
-        <div class="col-md-6" style="background: white; padding: 5% 5%">
-          <h4>N-K</h4>
-          <div style="padding: 5%">
-            <form action="" method="POST">
+  <body class="login">
+    <div class="container-fluid login-main">
+      <div class="row login-inner">
+        <div class="col-md-6 login-inner-right">
+          <h4>N-KONNET</h4>
+          {% if error %}
+          <p class="error">Invalid Credentials</p>
+          {% endif %}
+          <div style="padding: 1%">
+            <form action="" method="POST" class="login-form">
               <p>
                 <!-- <label for="username">username</label> -->
                 <br />
@@ -28,46 +33,41 @@
                   name="username"
                   id="username"
                   placeholder="Enter your username"
-                  style="
-                    width: 100%;
-                    padding: 2% 0%;
-                    border: none;
-                    border-bottom: 1px solid rgb(14, 180, 166); ;
-                  "
+                  required
                 />
               </p>
               <p>
-                <!-- <label for="password">password</label> -->
                 <br />
                 <input
                   type="paasword"
                   name="password"
                   id="password"
                   placeholder="Enter your password"
-                  style="
-                    width: 100%;
-                    padding: 2% 0%;
-                    border: none;
-                    border-bottom: 1px solid rgb(14, 180, 166);
-                  "
+                  required
                 />
               </p>
               {% csrf_token %}
-              <button
-                class="btn"
-                style="width: 100%; background: rgb(14, 180, 166)"
-              >
-                Login
-              </button>
+              <button class="btn">Login</button>
             </form>
             <p>Recover password <a href="">Here</a></p>
+            <p style="text-align: center">Or Login with</p>
+            <p style="text-align: center">
+              <a href=""
+                ><img
+                  src="{% static 'main/g.png' %}"
+                  width="33"
+                  alt="Email Login"
+              /></a>
+            </p>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" style="background: red; padding: 0px">
           <img
-            src="{% static 'main/login.jpg' %}"
+            src="{% static 'main/login1.jpg' %}"
             width="100%"
             alt="login image"
+            style="margin: 0px"
+            class="d-none d-md-block"
           />
         </div>
       </div>
