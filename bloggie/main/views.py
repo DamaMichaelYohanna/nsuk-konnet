@@ -5,6 +5,7 @@ from blog.models import Post
 
 def login_view(request):
     """custom login for user"""
+    error = False
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
@@ -15,8 +16,10 @@ def login_view(request):
                 return redirect("/market/store")
             elif user.catalog:
                 return redirect("/market/catalog")
+        else:
+            error = True
 
-    return render(request, "login.html")
+    return render(request, "login.html", {'error': error})
 
 
 def logout_view(request):
