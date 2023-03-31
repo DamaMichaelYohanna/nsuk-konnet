@@ -1,4 +1,4 @@
-from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth import login, logout, authenticate, get_user_model
 from django.shortcuts import render, redirect, reverse
 from blog.models import Post
 
@@ -25,6 +25,24 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect(reverse("main:home"))
+
+
+def register_view(request):
+    """register view for user"""
+    error = False
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        password2 = request.POST.get("password2")
+        if username and password2 == password:
+            new_user = get_user_model().objects.create(username=username)
+            new_user.set_password(password)
+            new_user.save()
+            return redirect("/login")
+        else:
+            error = True
+
+    return render(request, "register.html", {'error': error})
 
 
 def index(request):
