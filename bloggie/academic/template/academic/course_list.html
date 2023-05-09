@@ -1,0 +1,41 @@
+{% extends 'blog_base.html' %}{% load static %}{% block title %} NSUK-KONNET |
+Blog{% endblock %} {% block content %}\
+
+<div class="container">
+  <div class="inner-container">
+    <h3>Kindly filter the dropdown Below to view your courses</h3>
+    <form action="" method="get">
+      <table class="table">
+        <tr>
+          <th>Faculty</th>
+          <th>Department</th>
+          <th>Level</th>
+        </tr>
+        <tr>
+          <td>
+            <select name="faculty" id="faculty" class="form-control">
+              <option value="Applied Science">Applied Science</option>
+              <option value="Applied Science">Applied Science</option>
+              <option value="Applied Science">Applied Science</option>
+            </select>
+          </td>
+          <td>
+            <select name="Department" id="Department" class="form-control">
+              <option value="Computer Sci.">Computer Sci.</option>
+              <option value="Physics">Physics</option>
+              <option value="Chemistry">Chemistry</option>
+            </select>
+          </td>
+          <td>
+            <select name="level" id="level" class="form-control">
+              <option value="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>
+{% endblock %}
