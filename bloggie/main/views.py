@@ -45,6 +45,10 @@ def register_view(request):
     return render(request, "register.html", {'error': error})
 
 
+def password_reset_request(request):
+    return render(request, "password_reset.html")
+
+
 def index(request):
     posts = Post.objects.all()
     try:
@@ -60,4 +64,3 @@ def about_us(request):
 
 def pass_questions(request):
     return render(request, 'pass_questions.html')
-
