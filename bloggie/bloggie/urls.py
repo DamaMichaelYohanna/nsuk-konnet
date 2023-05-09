@@ -23,6 +23,7 @@ urlpatterns = [
     path("", include("main.urls")),
     path('admin/', admin.site.urls),
     path("blog/", include("blog.urls")),
+    path("academic/", include("academic.urls")),
     path('market/', include("market.urls")),
     path('froala_editor/', include('froala_editor.urls')),
 
