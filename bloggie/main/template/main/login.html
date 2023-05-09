@@ -49,15 +49,9 @@
               {% csrf_token %}
               <button class="btn">Login</button>
             </form>
-            <p>Recover password <a href="">Here</a></p>
-            <p style="text-align: center">Or Login with</p>
-            <p style="text-align: center">
-              <a href=""
-                ><img
-                  src="{% static 'main/g.png' %}"
-                  width="33"
-                  alt="Email Login"
-              /></a>
+            <p>
+              <a href="/password/reset/request">Recover password</a> |
+              <a href="/register">Register Here</a>
             </p>
           </div>
         </div>
