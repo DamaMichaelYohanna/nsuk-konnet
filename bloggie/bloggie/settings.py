@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'academic',
     'blog',
     'main',
     'market',
@@ -57,7 +58,8 @@ ROOT_URLCONF = 'bloggie.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'blog', 'template', 'blog'),
+        'DIRS': [os.path.join(BASE_DIR, 'academic', 'template'),
+                 os.path.join(BASE_DIR, 'blog', 'template', 'blog'),
                  os.path.join(BASE_DIR, 'main', 'template', 'main'),
                  os.path.join(BASE_DIR, 'market', 'template', 'market')],
         'APP_DIRS': True,
@@ -117,9 +119,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'blog', 'static', ),
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'market', 'static'),
+                    os.path.join(BASE_DIR, 'blog', 'static', ),
                     os.path.join(BASE_DIR, 'main', 'static'),
-                    os.path.join(BASE_DIR, 'market', 'static')]
+                    os.path.join(BASE_DIR, 'market', 'static'),
+                    ]
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 # Media files uploaded by user
 # Base url to serve media files
