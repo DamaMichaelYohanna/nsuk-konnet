@@ -1,41 +1,108 @@
 {% extends 'blog_base.html' %}{% load static %}{% block title %} NSUK-KONNET |
-Blog{% endblock %} {% block content %}\
+Blog{% endblock %} {% block content %}
 
-<div class="container">
+<div class="container pt-4">
   <div class="inner-container">
-    <h3>Kindly filter the dropdown Below to view your courses</h3>
-    <form action="" method="get">
+    <h3 style="color: rgb(14, 180, 166)">
+      Kindly filter the dropdown Below to view your courses
+    </h3>
+    <form
+      action=""
+      method="get"
+      id="DeptForm"
+      data-dept-url="{% url 'ajax_load_dept' %}"
+    >
       <table class="table">
         <tr>
           <th>Faculty</th>
           <th>Department</th>
           <th>Level</th>
+          <th></th>
         </tr>
         <tr>
           <td>
             <select name="faculty" id="faculty" class="form-control">
-              <option value="Applied Science">Applied Science</option>
-              <option value="Applied Science">Applied Science</option>
-              <option value="Applied Science">Applied Science</option>
+              <option value="">-----------------</option>
+              {% for fac in faculty %}
+              <option value="{{fac.id}}">{{fac.name}}</option>
+              {% endfor %}
             </select>
           </td>
           <td>
-            <select name="Department" id="Department" class="form-control">
-              <option value="Computer Sci.">Computer Sci.</option>
-              <option value="Physics">Physics</option>
-              <option value="Chemistry">Chemistry</option>
+            <select name="department" id="Department" class="form-control">
+              <option value="">----------------</option>
             </select>
           </td>
           <td>
             <select name="level" id="level" class="form-control">
-              <option value="100">100</option>
-              <option value="200">200</option>
-              <option value="300">300</option>
+              <option value="1">100</option>
+              <option value="2">200</option>
+              <option value="3">300</option>
             </select>
+          </td>
+          <td>
+            <button
+              style="
+                background-color: rgb(14, 180, 166);
+                color: white;
+                font-weight: bold;
+              "
+              class="btn"
+            >
+              Filter
+            </button>
           </td>
         </tr>
       </table>
     </form>
+    {% if courses %}
+    <table class="table">
+      <tr>
+        <th>Course Name</th>
+        <th>Credit Unit</th>
+        <th>Prerequisite</th>
+      </tr>
+      {% for course in courses %}
+      <tr>
+        <td>{{course.name}}</td>
+        <td>{{course.level}}</td>
+        <td>Coming soon</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+    <div style="text-align: center">
+      <h3></h3>
+      <img
+        src="{% static 'academic/empty.gif' %}"
+        alt="empty image"
+        height="200px"
+        width="300px"
+      />
+      <body style="background-color: #f9f9f9"></body>
+    </div>
+    {% endif %}
   </div>
 </div>
+<script>
+  $("#faculty").change(function () {
+    var url = $("#DeptForm").attr("data-dept-url"); // get the url of the `load_cities` view
+    console.log(url);
+    var facultyId = $(this).val(); // get the selected country ID from the HTML input
+    console.log(facultyId);
+
+    $.ajax({
+      // initialize an AJAX request
+      url: url, // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+      data: {
+        faculty: facultyId, // add the country id to the GET parameters
+      },
+      success: function (data) {
+        // `data` is the return of the `load_cities` view function
+        $("#Department").html(data); // replace the contents of the city input with the data that came from the server
+        console.log(data);
+      },
+    });
+  });
+</script>
 {% endblock %}
