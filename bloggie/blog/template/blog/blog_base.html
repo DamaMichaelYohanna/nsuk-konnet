@@ -47,6 +47,7 @@
     <!-- css for market app goes here -->
     <link rel="stylesheet" href="{% static 'market/market_style.css' %}" />
     <title>{% block title %} Base Title {% endblock title %}</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   </head>
   <body>
     <!-- header section goes here -->
@@ -145,7 +146,7 @@
             <span
               ><a href="/login" class="btn btn-dark">Login</a>
               <a
-                href="/signup"
+                href="/register"
                 class="btn"
                 style="background: rgb(14, 180, 166); color: white"
                 >Sign Up</a
