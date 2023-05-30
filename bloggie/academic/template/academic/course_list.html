@@ -35,9 +35,9 @@ Blog{% endblock %} {% block content %}
           </td>
           <td>
             <select name="level" id="level" class="form-control">
-              <option value="1">100</option>
-              <option value="2">200</option>
-              <option value="3">300</option>
+              {% for level in level %}
+              <option value="{{level.id}}">{{level.level}}</option>
+              {% endfor %}
             </select>
           </td>
           <td>
@@ -58,18 +58,29 @@ Blog{% endblock %} {% block content %}
     {% if courses %}
     <table class="table">
       <tr>
+        <th>Course Code</th>
         <th>Course Name</th>
-        <th>Credit Unit</th>
+        <!-- <th>Credit Unit</th> -->
         <th>Prerequisite</th>
       </tr>
       {% for course in courses %}
       <tr>
-        <td>{{course.name}}</td>
-        <td>{{course.level}}</td>
-        <td>Coming soon</td>
+        <td>{{course.code}}</td>
+        <th>{{course.title}}</th>
+        <!-- <td>{{course.level}}</td> -->
+        <td>{{course.pre}}</td>
+      </tr>
+      {% endfor %} {% for course in borrowed %}
+      <tr>
+        <td>{{course.course.code}}</td>
+        <th>{{course.course.title}}</th>
+        <!-- <td>{{course.level}}</td> -->
+        <td>{{course.course.pre}}</td>
       </tr>
       {% endfor %}
     </table>
+
+    <table></table>
     {% else %}
     <div style="text-align: center">
       <h3></h3>
@@ -79,6 +90,7 @@ Blog{% endblock %} {% block content %}
         height="200px"
         width="300px"
       />
+      <hr />
       <body style="background-color: #f9f9f9"></body>
     </div>
     {% endif %}
