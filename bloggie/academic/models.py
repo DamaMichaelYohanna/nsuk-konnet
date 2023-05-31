@@ -1,4 +1,5 @@
 from django.db import models
+from froala_editor.fields import FroalaField
 
 
 class Faculty(models.Model):
@@ -48,3 +49,14 @@ class BorrowedCourse(models.Model):
 
     def __str__(self):
         return f'{self.course}'
+
+
+class Orientation(models.Model):
+    """model for departmental orientation and information """
+    department = models.ForeignKey(Department, on_delete=models.DO_NOTHING)
+    content = FroalaField()
+    date = models.DateField(auto_created=True)
+
+    def __str__(self):
+        return f"{self.department}"
+
