@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 
-from academic.models import Department, Faculty, Level, Course, BorrowedCourse
+from academic.models import Department, Faculty, Level, Course, BorrowedCourse, Orientation
 
 
 def course_list(request):
@@ -24,4 +24,21 @@ def load_department(request):
 
 
 def orientation(request):
-    return render(request, 'academic/orientation.html',)
+    """view to fetch orientation information based on student department"""
+    dept: str = request.GET.get("department")  # grab department
+    if dept:
+        content: Orientation = Orientation.objects.get(department=dept)
+    else:
+        content = None
+    faculty: Faculty = Faculty.objects.all()
+    context: dict = {"faculty": faculty, 'orientation': content}
+    return render(request, 'academic/orientation.html', context)
+
+
+def past_question(request):
+    context = {"course": "hello"}
+    return render(request, 'academic/pass-q.html', context)
+
+
+def cbt(request):
+    return render(request, 'academic/cbt.html')
