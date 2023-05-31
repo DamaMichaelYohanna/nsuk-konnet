@@ -1,0 +1,72 @@
+{% extends 'blog_base.html' %}{% load static %}{% block title %} NSUK-KONNET |
+Orientation {% endblock %} {% block content %}
+<div class="container pt-4">
+  <div class="inner-container">
+    <h3 style="color: rgb(14, 180, 166)">Are you a new student?</h3>
+    <p>Select Your Faculty And Department below to view more details.</p>
+    <form
+      action=""
+      method="get"
+      id="DeptForm"
+      data-dept-url="{% url 'ajax_load_dept' %}"
+    >
+      <table class="table">
+        <tr>
+          <th>Faculty</th>
+          <th>Department</th>
+          <th></th>
+        </tr>
+        <tr>
+          <td>
+            <select name="faculty" id="faculty" class="form-control">
+              <option value="">-----------------</option>
+              {% for fac in faculty %}
+              <option value="{{fac.id}}">{{fac.name}}</option>
+              {% endfor %}
+            </select>
+          </td>
+          <td>
+            <select name="department" id="Department" class="form-control">
+              <option value="">----------------</option>
+            </select>
+          </td>
+          <td>
+            <button
+              style="
+                background-color: rgb(14, 180, 166);
+                color: white;
+                font-weight: bold;
+              "
+              class="btn"
+            >
+              Filter
+            </button>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <div>{{orientation.content | safe}}</div>
+  </div>
+</div>
+<script>
+  $("#faculty").change(function () {
+    var url = $("#DeptForm").attr("data-dept-url"); // get the url of the `load_cities` view
+    console.log(url);
+    var facultyId = $(this).val(); // get the selected country ID from the HTML input
+    console.log(facultyId);
+
+    $.ajax({
+      // initialize an AJAX request
+      url: url, // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+      data: {
+        faculty: facultyId, // add the country id to the GET parameters
+      },
+      success: function (data) {
+        // `data` is the return of the `load_cities` view function
+        $("#Department").html(data); // replace the contents of the city input with the data that came from the server
+        console.log(data);
+      },
+    });
+  });
+</script>
+{% endblock content %}
