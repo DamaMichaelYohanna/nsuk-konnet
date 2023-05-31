@@ -1,58 +1,66 @@
 {% extends 'blog_base.html' %}{% load static %}{% block title %} NSUK-KONNET |
 Blog{% endblock %} {% block content %}
 <div class="market container-fluid" style="margin: 0px">
-  <div class="about-header pt-4">
-    <div class="row market-main">
-      <div class="col-md-8 market-main-left">
+  <div class="about-header">
+    <div class="row market-main" style="background: rgb(14, 180, 166)">
+      <div class="col-md-4 market-main-left">
+        <img src="{% static 'market/girl1.png' %}" alt="girl picture..." />
+      </div>
+      <div class="col-md-4 market-main-middle">
         <div>
-          <img src="{% static 'market/shopping.jpg' %}" alt="about image" />
-        </div>
-        <div>
-          <form action="" method="GET" class="pt-3">
+          <h6>
+            Search Anything in
+            <span
+              style="
+                background: rgb(255, 255, 255);
+                padding: 5px;
+                border-radius: 5%;
+              "
+              >NSUK-KONNET</span
+            >
+          </h6>
+          <form action="" method="GET" class="pt-3 market-search-form">
             <span class="input-group">
-              <input class="form-control" type="text" placeholder="search" />
+              <input
+                class="form-control"
+                type="text"
+                placeholder="You are looking for...."
+              />
               <button class="input-group-text">Search</button>
             </span>
           </form>
         </div>
-        <div class="row market-product">
-          {% for product in products %}
-          <div class="col-md-4 col-sm-6 market-product-inner">
-            <div>
-              <div>
-                <img
-                  src="{% static 'market/shopping.jpg' %}"
-                  alt="product image"
-                />
-              </div>
-              <span style="width: 100%; padding: 2%; display: inline-block"
-                >{{product.name}}
-                <a
-                  href="/market/order/place/{{product.id}}"
-                  class="btn btn-primary"
-                  style="margin: 3% 6%"
-                  >Place Order</a
-                ></span
-              >
-              <hr />
-              Price Tag: #{{product.price}}
-            </div>
-          </div>
-          {% endfor %}
-        </div>
       </div>
 
-      <div class="col-md-4 market-main-right">
-        <h4 class="pb-3">Features Stores</h4>
-        <hr />
-        <div>
-          <img src="{% static 'market/Featured.png' %}" height="20px" alt="" />
-          <hr />
-          <a href="">Vist Store</a>
-        </div>
+      <div class="col-md-4 market-main-right" style="text-align: left">
+        <img src="{% static 'market/girl.png' %}" height="20px" alt="" />
       </div>
     </div>
   </div>
   <hr style="width: 60%; margin: 3% auto" />
+  <div>
+    <div class="row market-product">
+      {% for product in products %}
+      <div class="col-md-4 col-sm-6 market-product-inner">
+        <div>
+          <div>
+            <img src="{% static 'market/shopping.jpg' %}" alt="product image" />
+          </div>
+          <span style="width: 100%; padding: 2%; display: inline-block"
+            >{{product.name}}
+            <a
+              href="/market/order/place/{{product.id}}"
+              class="btn btn-primary"
+              style="margin: 3% 6%"
+              >Place Order</a
+            ></span
+          >
+          <hr />
+          Price Tag: #{{product.price}}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
 </div>
 {% endblock content %}

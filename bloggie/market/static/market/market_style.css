@@ -1,11 +1,26 @@
 .market{
     /*  */
 }
-.market-main-right{
-    padding: 2%;
-    background-color: rgb(247, 239, 239);
+.market-main-left img{
+    height: 100%;
+    width: 100%;
 }
 
+.market-main-right{
+    background: rgb(14, 180, 166);
+    text-align: left;
+}
+.market-main-right img,.market-main-left img{
+    height: 100%;
+    width: 60%;
+}
+.market-main-middle{
+    padding: 7% 3%;
+    height: 200%
+}
+.market-search-form input{
+    padding:15px;
+}
 .market-product{
     margin: 2%;
     background-color: rgb(255, 255, 255);
