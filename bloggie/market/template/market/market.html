@@ -4,7 +4,11 @@ Blog{% endblock %} {% block content %}
   <div class="about-header">
     <div class="row market-main" style="background: rgb(14, 180, 166)">
       <div class="col-md-4 market-main-left">
-        <img src="{% static 'market/girl1.png' %}" alt="girl picture..." />
+        <img
+          class="d-none d-lg-block"
+          src="{% static 'market/girl1.png' %}"
+          alt="girl picture..."
+        />
       </div>
       <div class="col-md-4 market-main-middle">
         <div>
@@ -33,33 +37,40 @@ Blog{% endblock %} {% block content %}
       </div>
 
       <div class="col-md-4 market-main-right" style="text-align: left">
-        <img src="{% static 'market/girl.png' %}" height="20px" alt="" />
+        <img
+          class="d-none d-lg-block"
+          src="{% static 'market/girl.png' %}"
+          height="20px"
+          alt=""
+        />
       </div>
     </div>
   </div>
   <hr style="width: 60%; margin: 3% auto" />
-  <div>
-    <div class="row market-product">
-      {% for product in products %}
-      <div class="col-md-4 col-sm-6 market-product-inner">
-        <div>
+  <div class="row">
+    <div class="col-md-3">left pain for categories</div>
+    <div class="col-md-9">
+      <div class="row market-product">
+        {% for product in products %}
+        <div class="col-md-3 col-sm-6 market-product-inner">
           <div>
-            <img src="{% static 'market/shopping.jpg' %}" alt="product image" />
+            <div style="text-align: center; background: red">
+              <img
+                class="img-responsive"
+                src="{{product.image.url}}"
+                alt="product image"
+                style="max-width: 100%; height: auto"
+              />
+            </div>
+            <h5 style="width: 100%; padding: 2%; text-align: center">
+              {{product.name}}
+            </h5>
+            <hr />
+            Price Tag: #{{product.price}}
           </div>
-          <span style="width: 100%; padding: 2%; display: inline-block"
-            >{{product.name}}
-            <a
-              href="/market/order/place/{{product.id}}"
-              class="btn btn-primary"
-              style="margin: 3% 6%"
-              >Place Order</a
-            ></span
-          >
-          <hr />
-          Price Tag: #{{product.price}}
         </div>
+        {% endfor %}
       </div>
-      {% endfor %}
     </div>
   </div>
 </div>
