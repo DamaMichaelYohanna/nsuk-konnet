@@ -31,8 +31,7 @@
     padding-bottom: 3%;
 }
 .market-product-inner img{
-    height: 100%;
-    width: 100%;
+    width: 50%;
 }
 .market-product-inner:hover{
     /* background: rgb(86, 161, 86); */
