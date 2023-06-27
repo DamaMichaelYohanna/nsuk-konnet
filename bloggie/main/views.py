@@ -12,10 +12,10 @@ def login_view(request):
         user = authenticate(username=username, password=password)
         if user and user.is_active:
             login(request, user)
-            if user.store:
-                return redirect("/market/store")
-            elif user.catalog:
-                return redirect("/market/catalog")
+            # if user.store:
+            return redirect("/")
+            # elif user.catalog:
+            # return redirect("/market/catalog")
         else:
             error = True
 
