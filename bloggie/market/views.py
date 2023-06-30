@@ -1,11 +1,32 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render, redirect
 from .models import Product, Order, StoreOrder
 
 
 def market(request):
-    products = Product.objects.all()
+    # if
+    page = request.GET.get("page", 1)
+    search = request.GET.get('search')
+    category = request.GET.get("category")
+    if search and category:
+        products = Product.objects.filter(name=search)
+    elif search:
+        products = Product.objects.filter(name=search)
+    elif category:
+        products = Product.objects.filter(category=category)
+    else:
+        products = Product.objects.all()
+
+    page_obj = Paginator(products, 20)
+    try:
+        products = page_obj.page(page)
+    except PageNotAnInteger:
+        products = page_obj.page(1)
+    except EmptyPage:
+        products = page_obj.page(page_obj.num_pages)
+    print(products)
     context = {"products": products}
     return render(request, 'market.html', context)
 
