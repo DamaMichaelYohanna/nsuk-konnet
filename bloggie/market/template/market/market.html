@@ -16,7 +16,7 @@ Blog{% endblock %} {% block content %}
             Search Anything in
             <span
               style="
-                background: rgb(255, 255, 255);
+                background: rgb(240, 6, 6);
                 padding: 5px;
                 border-radius: 5%;
               "
@@ -50,23 +50,22 @@ Blog{% endblock %} {% block content %}
   <div class="row">
     <div class="col-md-3">left pain for categories</div>
     <div class="col-md-9">
-      <div class="row market-product">
+      <div class="market-product">
         {% for product in products %}
-        <div class="col-md-3 col-sm-6 market-product-inner">
-          <div>
-            <div style="text-align: center; background: red">
-              <img
-                class="img-responsive"
-                src="{{product.image.url}}"
-                alt="product image"
-                style="max-width: 100%; height: auto"
-              />
-            </div>
-            <h5 style="width: 100%; padding: 2%; text-align: center">
-              {{product.name}}
-            </h5>
+        <div class="market-product-main">
+          <div class="market-product-inner">
+            <img src="{{product.image.url}}" alt="" />
+          </div>
+          <div class="market-product-text" style="padding: 5%">
+            <a href="">
+              <h2>{{product.name | truncatewords:5}}</h2>
+            </a>
+            <h4>₦ {{product.price}}</h4>
             <hr />
-            Price Tag: #{{product.price}}
+            <div>
+              <span>Posted By: </span>
+              <span>Since: 10/12/2023</span>
+            </div>
           </div>
         </div>
         {% endfor %}
