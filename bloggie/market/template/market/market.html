@@ -28,6 +28,7 @@ Blog{% endblock %} {% block content %}
               <input
                 class="form-control"
                 type="text"
+                name="search"
                 placeholder="You are looking for...."
               />
               <button class="input-group-text">Search</button>
@@ -52,7 +53,7 @@ Blog{% endblock %} {% block content %}
       <h2>Categories</h2>
       <hr />
       <p>
-        <a href="">
+        <a href="?catgory=phones">
           <img src="{% static 'market/phone.png' %}" alt="Idea picture" />
           <span style="padding-left: 4%"> Computer and Phones </span>
         </a>
@@ -119,21 +120,11 @@ Blog{% endblock %} {% block content %}
           </li>
           {% endif %} {% for p in products.paginator.page_range %}
           <li>
-            <a href=""><span class="visuallyhidden">page </span>{{p}}</a>
-          </li>
-          {% endfor %}
-          <li>
-            <a href="" aria-current="page"
-              ><span class="visuallyhidden">page </span>2</a
+            <a href="?page={{p}}"
+              ><span class="visuallyhidden">page </span>{{p}}</a
             >
           </li>
-          <li>
-            <a href=""><span class="visuallyhidden">page </span>3</a>
-          </li>
-          <li>
-            <a href=""><span class="visuallyhidden">page </span>4</a>
-          </li>
-          {% if products.has_next %}
+          {% endfor %} {% if products.has_next %}
           <li>
             <a href="?page={{products.next_page_number}}"
               ><span class="visuallyhidden">next</span

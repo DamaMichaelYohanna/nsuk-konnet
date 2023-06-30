@@ -76,7 +76,7 @@
     white-space: nowrap;
 }
 
-nav {
+.nav_ {
     display: flex;
     justify-content: center;
     border-top: 1px solid #eee;

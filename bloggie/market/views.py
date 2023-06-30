@@ -11,11 +11,11 @@ def market(request):
     search = request.GET.get('search')
     category = request.GET.get("category")
     if search and category:
-        products = Product.objects.filter(name=search)
+        products = Product.objects.filter(name__icontains=search)
     elif search:
-        products = Product.objects.filter(name=search)
+        products = Product.objects.filter(name__icontains=search)
     elif category:
-        products = Product.objects.filter(category=category)
+        products = Product.objects.filter(category__icontains=category)
     else:
         products = Product.objects.all()
 
