@@ -48,7 +48,44 @@ Blog{% endblock %} {% block content %}
   </div>
   <hr style="width: 60%; margin: 3% auto" />
   <div class="row">
-    <div class="col-md-3">left pain for categories</div>
+    <div class="col-md-3 market-side-bar d-none d-md-block">
+      <h2>Categories</h2>
+      <hr />
+      <p>
+        <a href="">
+          <img src="{% static 'market/phone.png' %}" alt="Idea picture" />
+          <span style="padding-left: 4%"> Computer and Phones </span>
+        </a>
+      </p>
+      <p>
+        <a href="">
+          <img src="{% static 'market/household.png' %}" alt="Idea picture" />
+          <span style="padding-left: 4%"> Clothes and jewely </span>
+        </a>
+      </p>
+      <a href=""
+        ><p>
+          <img src="{% static 'market/idea.png' %}" alt="Idea Electronic" />
+          Electronics
+        </p></a
+      >
+      <p>
+        <a href="">
+          <img
+            src="{% static 'market/household.png' %}"
+            alt="house appliance"
+          />
+          <span style="padding-left: 4%"> House appliance </span>
+        </a>
+      </p>
+
+      <p>
+        <a href="">
+          <img src="{% static 'market/more.png' %}" alt="house appliance" />
+          <span style="padding-left: 4%"> Others </span>
+        </a>
+      </p>
+    </div>
     <div class="col-md-9">
       <div class="market-product">
         {% for product in products %}
