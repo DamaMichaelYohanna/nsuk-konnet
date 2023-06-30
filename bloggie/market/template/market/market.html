@@ -107,6 +107,43 @@ Blog{% endblock %} {% block content %}
         </div>
         {% endfor %}
       </div>
+      {% if products.has_other_pages %}
+      <nav class="nav_" aria-label="pagination">
+        <ul class="pagination">
+          {% if products.has_previous%}
+          <li>
+            <a href="?page={{products.previous_page_number}}"
+              ><span aria-hidden="true">«</span
+              ><span class="visuallyhidden">previou</span></a
+            >
+          </li>
+          {% endif %} {% for p in products.paginator.page_range %}
+          <li>
+            <a href=""><span class="visuallyhidden">page </span>{{p}}</a>
+          </li>
+          {% endfor %}
+          <li>
+            <a href="" aria-current="page"
+              ><span class="visuallyhidden">page </span>2</a
+            >
+          </li>
+          <li>
+            <a href=""><span class="visuallyhidden">page </span>3</a>
+          </li>
+          <li>
+            <a href=""><span class="visuallyhidden">page </span>4</a>
+          </li>
+          {% if products.has_next %}
+          <li>
+            <a href="?page={{products.next_page_number}}"
+              ><span class="visuallyhidden">next</span
+              ><span aria-hidden="true">»</span></a
+            >
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+      {% endif %}
     </div>
   </div>
 </div>
