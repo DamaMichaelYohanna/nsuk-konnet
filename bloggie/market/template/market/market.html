@@ -1,5 +1,5 @@
 {% extends 'blog_base.html' %}{% load static %}{% block title %} NSUK-KONNET |
-Blog{% endblock %} {% block content %}
+Market Place{% endblock %} {% block content %}
 <div class="market container-fluid" style="margin: 0px">
   <div class="about-header">
     <div class="row market-main" style="background: rgb(14, 180, 166)">
@@ -47,6 +47,7 @@ Blog{% endblock %} {% block content %}
       </div>
     </div>
   </div>
+  <h3 style="text-align: center; margin: 3%">See Our Collections</h3>
   <hr style="width: 60%; margin: 3% auto" />
   <div class="row">
     <div class="col-md-3 market-side-bar d-none d-md-block">
@@ -95,7 +96,7 @@ Blog{% endblock %} {% block content %}
             <img src="{{product.image.url}}" alt="" />
           </div>
           <div class="market-product-text" style="padding: 5%">
-            <a href="">
+            <a href="/market/product/{{product.pk}}/detail">
               <h2>{{product.name | truncatewords:5}}</h2>
             </a>
             <h4>₦ {{product.price}}</h4>
