@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Product, Order, StoreOrder
 
 
@@ -11,11 +11,11 @@ def market(request):
     search = request.GET.get('search')
     category = request.GET.get("category")
     if search and category:
-        products = Product.objects.filter(name=search)
+        products = Product.objects.filter(name__icontains=search)
     elif search:
-        products = Product.objects.filter(name=search)
+        products = Product.objects.filter(name__icontains=search)
     elif category:
-        products = Product.objects.filter(category=category)
+        products = Product.objects.filter(category__icontains=category)
     else:
         products = Product.objects.all()
 
@@ -29,6 +29,11 @@ def market(request):
     print(products)
     context = {"products": products}
     return render(request, 'market.html', context)
+
+
+def product_detail(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    return render(request, 'product_detail.html', {"product": product})
 
 
 def place_order(request, pk):

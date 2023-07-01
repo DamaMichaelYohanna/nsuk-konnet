@@ -21,6 +21,16 @@
 .market-search-form input{
     padding:15px;
 }
+.market-side-bar{
+    background: white;
+}
+.market-side-bar a{
+    text-decoration: none;
+}
+.market-side-bar img{
+    height: 20px;
+    width: 20px;
+}
 .market-product{
     background-color: #f5f5f5;
     display: grid;
@@ -54,11 +64,118 @@
     /* background: rgb(86, 161, 86); */
     box-shadow: 0px 0px 15px grey;
 }
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}
 
+.nav_ {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #eee;
+    margin-top: 1em;
+    padding-top: .5em;
+}
 
+.pagination {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
 
+.pagination li {
+    margin: 0 1px;
+}
 
+.pagination a {
+    display: block;
+    padding: .5em 1em;
+    border: 1px solid #999;
+    border-radius: .2em;
+    text-decoration: none;
+}
 
+.pagination a[aria-current="page"] {
+    background-color: #333;
+    color: #fff;
+}
+   
+/* PRODUCT DETAIL PAGE */
+/* -------------------- */
+.product-detail{
+    padding:3% 5%;
+    background-color:rgb(255, 255, 255);
+}
+.product-detail-left{background: #f6f6f6; padding: 5%}
+.product-detail-left img{
+    border-radius: 10px;
+    width:100%;
+}
+
+.product-detail-middle{
+    padding:1% 0px;
+
+}
+#inner-nav-link-a {
+    font-size: 0.7em;
+    text-decoration: underline;
+}
+
+.inner-nav-link-span {
+    margin-bottom:20%;
+    font-size: 0.7em;
+    color: rgb(14, 180, 166)
+}
+.product-detail-middle div{
+    padding-left: 4%;
+}
+.product-detail-middle-action{
+    display: flex; justify-content: space-between;
+}
+
+.product-detail-middle-action p{margin: 3% 0px}
+.product-detail-middle-action a{
+    border-radius: 0px;   
+    border: 1px solid rgb(14, 180, 166);
+    background: rgb(14, 180, 166);}
+
+.product-detail-middle-action div{
+    margin: 8% 0px
+}
+.product-detail-right{
+    text-align: center;
+    color:rgb(14, 180, 166);
+}
+.product-detail-right-inner{
+    margin: 5% 0px; padding: 5%
+}
+
+.product-detail-right-inner h5{color: rgb(69, 120, 120)}
+
+.product-detail-right-inner-house{display: flex}
+.product-detail-right-inner-house img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 2px solid rgb(14, 180, 166);
+}
+.product-detail-right-inner-profile{
+    margin: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.safety ul{
+    text-align: left;
+}
 
 
 
