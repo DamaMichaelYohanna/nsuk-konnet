@@ -188,3 +188,56 @@ hr{
         padding-top: 3%;
      }
     }
+
+/* Login page css */
+/* ------------------------------ */
+.login{
+    background: #f9f9f9;
+}
+.login-main{
+    padding-top: 6%
+}
+.login-inner{
+    margin: auto;
+    width: 60%;
+    box-shadow: 0px 0px 15px rgb(121, 118, 118);
+}
+.login-inner-right{
+    background: rgb(255, 255, 255);
+     padding: 5% 5%
+}
+.login-inner-right h4{
+    color: rgb(14, 180, 166)
+}
+.error{
+    background: tomato;
+    padding: 2%;
+    color: white;
+    font-weight: bold;
+}
+.login-form input{
+    width: 100%;
+    padding: 2% 0%;
+    border: none;
+    border-bottom: 1px solid rgb(14, 180, 166);
+}
+.login-form button{
+    width: 100%; background: rgb(14, 180, 166)
+}
+
+/* login page responsive for mobile */
+
+@media (max-width: 968px) {
+    .login-inner{
+        margin: 10%;
+        box-sizing: border-box;
+        width: 100%;
+        }
+    }
+@media (max-width: 868px) {
+    .login-inner{
+        margin: auto;
+        width: 100%;
+        box-shadow: none;
+        }
+    }
