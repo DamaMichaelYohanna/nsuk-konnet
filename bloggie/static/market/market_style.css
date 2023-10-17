@@ -21,6 +21,8 @@
 .market-search-form input{
     padding:15px;
 }
+<<<<<<< HEAD
+=======
 .market-side-bar{
     background: white;
 }
@@ -31,6 +33,7 @@
     height: 20px;
     width: 20px;
 }
+>>>>>>> e20cd45e9ef188dd94961e155b3135b9f2932991
 .market-product{
     background-color: #f5f5f5;
     display: grid;
@@ -176,6 +179,15 @@
 .safety ul{
     text-align: left;
 }
+
+
+
+
+
+
+
+
+
 
 
 
