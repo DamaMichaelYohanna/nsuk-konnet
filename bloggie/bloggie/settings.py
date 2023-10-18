@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'academic',
     'blog',
     'main',
-    'market',
     'froala_editor',
     'taggit'
 ]
